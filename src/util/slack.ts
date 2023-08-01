@@ -97,6 +97,7 @@ export const blocks = {
       label: {
         type: 'plain_text',
         text: label,
+        emoji: true,
       },
       element: {
         action_id: id,
@@ -126,7 +127,7 @@ export function modal({
   id,
   title,
   trigger_id,
-  submit_text,
+  submit_text = 'Submit',
 }: ModalArgs) {
   return {
     trigger_id,
