@@ -38,11 +38,11 @@ add some details to your app (name, description, image)
 
 **thse are commands user will use as `/<command name>` in your chat**
 
-you'll find it in left menu
+you'll find it in left menu (`api.slack.com` part of slack site)
 
 request url you should set to be yout tunnel url
 
-and path should be set to the path of some of your functions (for example in our case `<tunnel url>/api/api/slack`)
+and path should be set to the path of some of your functions (for example in our case `<tunnel url>/api/slack`)
 
 **Every time you restart the server, new tunnell url will be generated, so you need to set path every time**
 
