@@ -10,9 +10,16 @@ async function handleSlashCommands(payload: SlackSlashCommandPayload) {
   //
   switch (payload.command) {
     case '/foodfight':
+      const joke = await fetch('https://icanhazdadjoke.com', {
+        headers: {
+          accept: 'text/plain',
+        },
+      });
+
       const response = await slackApi('chat.postMessage', {
         channel: payload.channel_id,
-        text: 'Things are happening!',
+        // text: 'Things are happening!',
+        text: await joke.text(),
       });
 
       if (!response.ok) {
