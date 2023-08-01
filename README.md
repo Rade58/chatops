@@ -28,8 +28,6 @@ Since we setteng config that our functions are on endpoints: `<url>/api/<path of
 
 **Make change in your functions when we are live, and you'll see that this will reflect instantlly, in get request you test in browser you'll se the change for example when you reload the page** (send different data to test it)
 
-
-
 ## Go to `api.slack.com` to make all necessary settings
 
 you'll need to create an app
@@ -45,6 +43,8 @@ you'll find it in left menu
 request url you should set to be yout tunnel url
 
 and path should be set to the path of some of your functions (for example in our case `<tunnel url>/api/api/slack`)
+
+**Every time you restart the server, new tunnell url will be generated, so you need to set path every time**
 
 ### We need to crete bot user
 
