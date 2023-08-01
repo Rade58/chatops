@@ -42,3 +42,20 @@ export function verifySlackRequest(request: HandlerEvent) {
 
   return `v0=${hash}` === signature;
 }
+
+// as your app grow, if you want to add more feature this object will grow
+export const blocks = {
+  section: ({ text }: SectionBlockArgs): SlackBlockSection => {
+    return {
+      type: 'section',
+      text: {
+        // this is not markdown it is specific dialect
+        // slack created
+        type: 'mrkdwn',
+        text,
+      },
+    };
+  },
+  input: () => {},
+  select: () => {},
+};
