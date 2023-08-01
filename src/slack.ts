@@ -21,8 +21,9 @@ async function handleSlashCommands(payload: SlackSlashCommandPayload) {
         text: await joke.text(),
       }); */
 
-      const response = await slackApi('views.open', {
-        modal: modal({
+      const response = await slackApi(
+        'views.open',
+        modal({
           // make ups ome unique id
           id: 'foodfight-modal',
           title: 'Start a food fight',
@@ -51,8 +52,8 @@ async function handleSlashCommands(payload: SlackSlashCommandPayload) {
               ],
             }),
           ],
-        }),
-      });
+        })
+      );
 
       if (!response.ok) {
         console.log(response);
