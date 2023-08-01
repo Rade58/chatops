@@ -56,6 +56,67 @@ export const blocks = {
       },
     };
   },
-  input: () => {},
-  select: () => {},
+  input: ({
+    id,
+    label,
+    initial_value = '',
+    hint = '',
+    placeholder,
+  }: InputBlockArgs): SlackBlockInput => {
+    return {
+      block_id: `${id}_block`,
+      type: 'input',
+      label: {
+        type: 'plain_text',
+        text: label,
+      },
+      element: {
+        action_id: id,
+        type: 'plain_text_input',
+        placeholder: {
+          type: 'plain_text',
+          text: placeholder,
+        },
+        initial_value,
+      },
+      hint: {
+        type: 'plain_text',
+        text: hint,
+      },
+    };
+  },
+  select: ({
+    id,
+    label,
+    options,
+    placeholder,
+  }: SelectBlockArgs): SlackBlockInput => {
+    return {
+      block_id: `${id}_block`,
+      type: 'input',
+      label: {
+        type: 'plain_text',
+        text: label,
+      },
+      element: {
+        action_id: id,
+        type: 'static_select',
+        placeholder: {
+          type: 'plain_text',
+          text: placeholder,
+          emoji: true,
+        },
+        options: options.map(({ label, value }) => {
+          return {
+            text: {
+              type: 'plain_text',
+              text: label,
+              emoji: true,
+            },
+            value,
+          };
+        }),
+      },
+    };
+  },
 };
