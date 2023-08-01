@@ -8,6 +8,12 @@ I'm using netllify functions to interact with notion and slack apis
 ntl init
 ```
 
+## Typescript
+
+**We didn't instll `typescript` but our cloud fucnction will be written in typescript** 
+
+because we won't run our server locally at all, we will deploy everything in live mode and use tunnell url to expose our endpoints
+
 ## Live mode
 
 **We need live tunnel**
@@ -21,6 +27,8 @@ You will get the live url
 Since we setteng config that our functions are on endpoints: `<url>/api/<path of the function inside src>`, you can go to that url inside browser to test if it's working
 
 **Make change in your functions when we are live, and you'll see that this will reflect instantlly, in get request you test in browser you'll se the change for example when you reload the page** (send different data to test it)
+
+
 
 ## Go to `api.slack.com` to make all necessary settings
 
