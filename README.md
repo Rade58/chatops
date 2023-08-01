@@ -96,3 +96,10 @@ So, if you want bot to work for a specific channel you need to add it to specifi
 
 Good practice, if you are running one channell in some company, add bot to your channell
 
+## Slack Block Kit Builder
+
+go to <https://app.slack.com/block-kit-builder>
+
+and [read this if you want to know more about it](https://api.slack.com/block-kit)
+
+Here you can test all sorts of things you can do in Slack
