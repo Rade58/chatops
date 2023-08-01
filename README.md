@@ -1,6 +1,12 @@
-# chatops
+# Chatops
 
-I'm using netllify functions to interact with notion and slack apis
+bootstraped with:
+
+```
+pnpm init
+```
+
+I will be using netllify functions to interact with notion and slack APIs
 
 ## Netlify site initialized with
 
@@ -34,7 +40,7 @@ you'll need to create an app
 
 add some details to your app (name, description, image)
 
-### We then need to create slash commands
+### We then need to create `Slash Commands`
 
 **thse are commands user will use as `/<command name>` in your chat**
 
