@@ -93,3 +93,6 @@ and we need `Bot User OAuth Token`(We can find this in *Oauth & Permissions* sec
 type `/add` in channel, click on context menu `Add apps to channell`, pick your bot
 
 So, if you want bot to work for a specific channel you need to add it to specific channell. You can't add it to all channells
+
+Good practice, if you are running one channell in some company, add bot to your channell
+
