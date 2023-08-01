@@ -1,13 +1,12 @@
 import { type Handler } from '@netlify/functions';
 import { parse } from 'querystring';
-import { slackApi } from './util/slack';
+import { slackApi, verifySlackRequest } from './util/slack';
 
 //
 //
 //
 //
 async function handleSlashCommands(payload: SlackSlashCommandPayload) {
-  //
   switch (payload.command) {
     case '/foodfight':
       const joke = await fetch('https://icanhazdadjoke.com', {
@@ -48,6 +47,20 @@ async function handleSlashCommands(payload: SlackSlashCommandPayload) {
 
 export const handler: Handler = async (event) => {
   // todo: validate the slack request
+
+  const validation = verifySlackRequest(event);
+  // const validation = false;
+
+  if (!validation) {
+    console.error('Invalid request!');
+
+    return {
+      statusCode: 401,
+      body: 'Unauthorized!',
+    };
+  }
+
+  //
   const body = parse(event.body ?? '') as SlackPayload;
 
   if (body.command) {
