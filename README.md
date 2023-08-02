@@ -122,7 +122,7 @@ Shortcut can be displayed globally (lighting bolt) or on message
 
 We need `on message`
 
-Fill the form with other info and Assign some unique `callback_id`
+Fill the form with other info and Assign some unique `callback_id` (**you will need this to reference in code**)
 
 You now create a shortcut
 

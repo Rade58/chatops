@@ -118,6 +118,25 @@ async function handleInteractivity(payload: SlackModalPayload) {
 
       break;
 
+    // we handle shortcut in here
+    // when uses context menu right of message in chat
+    // and clicks on your shortcut
+    // we use callback_id we setted in dasboard when creating a shortcut
+    case 'start-food-fight-nudge':
+      const channel = payload.channel?.id;
+      const user_id = payload.user.id;
+      // thread timestamp
+      const thread_ts = payload.message.thread_ts ?? payload.message.ts;
+
+      await slackApi('chat.postMessage', {
+        channel,
+        thread_ts,
+        text: `Hey <@${user_id}>, an opinion like this one deserves heated public debate. Run the \`/foodfight\` command in a *#global* channel to start one.`,
+      });
+
+      break;
+    //
+    //
     default:
       console.log(`No handler defined for ${callback_id}`);
 
