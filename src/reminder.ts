@@ -33,6 +33,7 @@ const postNewNotionItemsToSlack: Handler = async function (event) {
     // body: '',
   };
 };
+//
 
 // to make cron job we will export this
 // export const handler = schedule('0 12 * * 1', postNewNotionItemsToSlack);

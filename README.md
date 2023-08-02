@@ -195,3 +195,9 @@ So we will use this to periodically send **notion items** that are not in progre
 We defined cron job function in `src/reminder.ts`
 
 Since our function gets deployed by pushing to main branch, we will have up and running cron job function deployed
+
+# Before pushing everything to main branch (before deploying)
+
+**SET ALL ENV VARIABLES IN NETLIFY DASHBOARD**
+
+OFCOURSE IT WILL THROW ERRORS WITHOUT MENTIONED THINGS
