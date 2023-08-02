@@ -192,3 +192,6 @@ import { schedule } from '@netlify/functions';
 
 So we will use this to periodically send **notion items** that are not in progress or completed (new items or todo items what ever you called them) to our **slack workspace**; maybe once a week
 
+We defined cron job function in `src/reminder.ts`
+
+Since our function gets deployed by pushing to main branch, we will have up and running cron job function deployed
