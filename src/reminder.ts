@@ -46,6 +46,8 @@ export const handler = schedule('*/4 * * * *', postNewNotionItemsToSlack);
 
 // we can test this function in development only by
 // going to <tunnel url>/api/reminder
+// (it worked for me, because bot actually mede a comment
+// with all of our unfinished todo entries)
 
 // but to actually test in production (to see if job is going to
 // be runned actually in intervals we setted, we need to deploy our

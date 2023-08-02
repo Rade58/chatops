@@ -14,12 +14,6 @@ I will be using netllify functions to interact with notion and slack APIs
 ntl init
 ```
 
-## Typescript
-
-**We didn't instll `typescript` but our cloud fucnction will be written in typescript** 
-
-because we won't run our server locally at all, we will deploy everything in live mode and use tunnell url to expose our endpoints
-
 ## Live mode
 
 **We need live tunnel**
