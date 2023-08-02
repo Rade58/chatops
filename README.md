@@ -136,6 +136,22 @@ Go into slack channell **reload page** and you have context menu on the right of
 
 go to <https://app.slack.com/block-kit-builder>
 
-and [read this if you want to know more about it](https://api.slack.com/block-kit)
+and [read this if you want to know more about Block Kit Builder](https://api.slack.com/block-kit)
 
 Here you can test all sorts of things you can do in Slack
+
+# Notion
+
+We need to have published page
+
+play around a little with notion, you will figure it out how it works
+
+you publish page by clicking on <kbd>Share</kbd> button at top right, and from ther you click on <kbd>Publish</kbd>
+
+we need a link of mentioned published page
+
+You'll easily see where is mentioned link, **ignore query params from the link, you wont need those when using url**
+
+### Notion app
+
+**We need to create notion app**
