@@ -103,7 +103,7 @@ async function handleInteractivity(payload: SlackModalPayload) {
       };
 
       // saving new item to slack
-
+      console.log({ fields });
       await saveItem(fields);
       //
 

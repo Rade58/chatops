@@ -50,22 +50,22 @@ export async function getNewItems(): Promise<NewItem[]> {
 
 // adding new 'Not Started' item
 
-export async function saveItem(newitem: NewItem) {
+export async function saveItem(item: NewItem) {
   const res = await notionApi('/pages', {
     parent: {
       database_id: process.env.NOTION_DATABASE_ID,
     },
     properties: {
       opinion: {
-        title: [{ text: { content: newitem.opinion } }],
-        spiceLevel: {
-          select: {
-            name: newitem.spiceLevel,
-          },
+        title: [{ text: { content: item.opinion } }],
+      },
+      spiceLevel: {
+        select: {
+          name: item.spiceLevel,
         },
-        submitter: {
-          rich_text: [{ text: { content: `@${newitem.submitter} on Slack` } }],
-        },
+      },
+      submitter: {
+        rich_text: [{ text: { content: `@${item.submitter} on Slack` } }],
       },
     },
   });
