@@ -44,8 +44,8 @@ async function handleSlashCommands(payload: SlackSlashCommandPayload) {
               hint: 'What do you beileive about food tht people finfd appealing? Say it with your chest!',
             }),
             blocks.select({
-              id: 'spicey_levels',
-              label: 'How spicey is this opinion?',
+              id: 'spice_level',
+              label: 'How spicy is this opinion?',
               placeholder: 'Select a spice level.',
               options: [
                 { label: 'mild', value: 'mild' },
@@ -113,7 +113,7 @@ async function handleInteractivity(payload: SlackModalPayload) {
         channel: 'C05KLGUB20J',
         // a way to reference user (I gues this is mrkdown (markdown flavour of slak))
         // you can write this kinds of tags: <@>
-        text: `Oh dang y'all :eyes: <@${payload.user.id}> just started a food fight with a ${fields.spiceLevel} take:\n\n**${fields.opinion}**\n\n...discuss.`,
+        text: `Oh dang y'all :eyes: <@${payload.user.id}> just started a food fight with a ${fields.spiceLevel} take:\n\n*${fields.opinion}*\n\n...discuss.`,
       });
 
       break;
@@ -140,7 +140,6 @@ async function handleInteractivity(payload: SlackModalPayload) {
 
 export const handler: Handler = async (event) => {
   // todo: validate the slack request
-
   const validation = verifySlackRequest(event);
   // const validation = false;
 
@@ -165,6 +164,10 @@ export const handler: Handler = async (event) => {
   }
 
   // todo: handle interactivity (e.g context commands, modals)
+  if (body.payload) {
+    const payload = JSON.parse(body.payload);
+    return handleInteractivity(payload);
+  }
 
   return {
     statusCode: 200,
