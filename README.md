@@ -155,3 +155,22 @@ You'll easily see where is mentioned link, **ignore query params from the link, 
 ### Notion app
 
 **We need to create notion app**
+
+Go to <https://www.notion.so/my-integrations>
+
+Add new integration, give it an name and upload the image, **And make sure you are creating it for the workspace that you want**
+
+For your new app you need to set some Capabilitie
+
+We are going to use `Read content` `Upate content` `Insert content`, which is already checked by default
+
+`No user information` should be checked
+
+make sure to save everything in those menus
+
+### Conect notion app to notion workspaace
+
+Go back to your notion page, and you have context menu top right, pick `Manage connection`, You should see your app, or type the name in order to find it and make a connection.
+
+
+
