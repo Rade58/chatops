@@ -172,10 +172,18 @@ make sure to save everything in those menus
 
 Go back to your notion page, and you have context menu top right, pick `Manage connection`, You should see your app, or type the name in order to find it and make a connection.
 
-### Get the secrets of your notion app (integration)
+### Take the secrets of your notion app (integration)
 
 Go back to your app, and copy the secret from there
 
 set it to th environment variable
+
+### Take the notion datbase id
+
+I already mentioned the url of your notion page you published
+
+FROM THAT URL WE ARE JUST TAKING **PART OF THE PATH MADE OF 'RANDOM CHARACTERS', AND WE DO NOT NEED THE QUERYSTRING**
+
+AND THAT IS DATBASE ID, and you should also set that as an environmment variable
 
 
