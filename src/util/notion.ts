@@ -21,7 +21,7 @@ export async function notionApi(endpoint: string, body: {}) {
   return data;
 }
 
-// getting a new items from datbase (items marrkd as to-do or 'Not Started')
+// getting new items from datbase (items marrkd as to-do or 'Not Started')
 
 export async function getNewItems(): Promise<NewItem[]> {
   const notionData = await notionApi(
@@ -46,4 +46,31 @@ export async function getNewItems(): Promise<NewItem[]> {
   });
 
   return openItems;
+}
+
+// adding new 'Not Started' item
+
+export async function saveItem(newitem: NewItem) {
+  const res = await notionApi('/pages', {
+    parent: {
+      database_id: process.env.NOTION_DATABASE_ID,
+    },
+    properties: {
+      opinion: {
+        title: [{ text: { content: newitem.opinion } }],
+        spiceLevel: {
+          select: {
+            name: newitem.spiceLevel,
+          },
+        },
+        submitter: {
+          rich_text: [{ text: { content: `@${newitem.submitter} on Slack` } }],
+        },
+      },
+    },
+  });
+
+  if (!res.ok) {
+    console.log(res);
+  }
 }
