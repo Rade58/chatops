@@ -96,6 +96,22 @@ So, if you want bot to work for a specific channel you need to add it to specifi
 
 Good practice, if you are running one channell in some company, add bot to your channell
 
+### At some point you will develop your command to be able to open modal when user types it out in chat
+
+Well, you also need to allow this through api dashboard
+
+Again go to `api.slack.com`
+
+This tyme you need to check `Interactivity` option inside `Interactivity & Shortcuts` section
+
+Why we need this. A lot of things counts as interactivity in terms of slack, like clicking the button, responding to a modal, bunch of other thingsrunning contact shortcut
+
+**WE ALSO NEED TO ENTER URL OF OUR FUNCTION IN THERE, AND SINCE WE BUILT OUR FUNCTION TO HANDLE DIFFERENT SLACK API ENDPOINTS, WE CAN USE SAME URL**
+
+`<tunnel url>/api/slack`
+
+And in our api endpoint (`src/slack.ts`): We built function called `handleInteractivity` to respond after user submits the form inside modal
+
 ## Slack Block Kit Builder
 
 go to <https://app.slack.com/block-kit-builder>

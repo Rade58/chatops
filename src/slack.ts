@@ -59,9 +59,13 @@ async function handleSlashCommands(payload: SlackSlashCommandPayload) {
         console.log(response);
       }
 
+      console.log('MODAL');
+
       break;
 
     default:
+      console.log('DEFAULT');
+
       return {
         statusCode: 200,
         body: `Command ${payload.command} not recognized!`,
