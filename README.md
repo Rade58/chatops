@@ -188,4 +188,10 @@ FROM THAT URL WE ARE JUST TAKING **PART OF THE PATH MADE OF 'RANDOM CHARACTERS',
 
 AND THAT IS DATBASE ID, and you should also set that as an environmment variable
 
+# Cron job for reminder
 
+We will use this for the mentioned purpose
+
+```ts
+import { schedule } from '@netlify/functions';
+```
