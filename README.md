@@ -112,9 +112,11 @@ Why we need this. A lot of things counts as interactivity in terms of slack, lik
 
 And in our api endpoint (`src/slack.ts`): We built function called `handleInteractivity` to respond after user submits the form inside modal
 
-### We can also create shortcuts
+### We can also create shortcuts (Context mnu shortcuts)
 
-We go to the menu I mentioned `Interactivity & Shortcuts`
+When I say context menu I men the three dots near the posted message in chat
+
+We go to the `Interactivity & Shortcuts`
 
 Then we create shortcut
 
