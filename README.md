@@ -110,6 +110,8 @@ Why we need this. A lot of things counts as interactivity in terms of slack, lik
 
 `<tunnel url>/api/slack`
 
+**Again, if we restart server this is another place we had to update url in**
+
 And in our api endpoint (`src/slack.ts`): We built function called `handleInteractivity` to respond after user submits the form inside modal
 
 ### We can also create shortcuts (Context mnu shortcuts)
