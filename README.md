@@ -172,5 +172,10 @@ make sure to save everything in those menus
 
 Go back to your notion page, and you have context menu top right, pick `Manage connection`, You should see your app, or type the name in order to find it and make a connection.
 
+### Get the secrets of your notion app (integration)
+
+Go back to your app, and copy the secret from there
+
+set it to th environment variable
 
 
