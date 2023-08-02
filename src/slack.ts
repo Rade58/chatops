@@ -131,7 +131,7 @@ async function handleInteractivity(payload: SlackModalPayload) {
       await slackApi('chat.postMessage', {
         channel,
         thread_ts,
-        text: `Hey <@${user_id}>, an opinion like this one deserves heated public debate. Run the \`/foodfight\` command in a *#global* channel to start one.`,
+        text: `Hey <@${user_id}>, an opinion like this one deserves heated public debate. Run the \`/foodfight\` command in a *#global* channel to start one. (Don't run command here in the thread because slash command don't work inside threads.)`,
       });
 
       break;
