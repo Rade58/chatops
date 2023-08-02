@@ -195,3 +195,6 @@ We will use this for the mentioned purpose
 ```ts
 import { schedule } from '@netlify/functions';
 ```
+
+So we will use this to periodically items that are not in progress or completed (new items or todo items what ever you called them); maybe once a week
+
