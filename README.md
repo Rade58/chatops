@@ -201,3 +201,19 @@ Since our function gets deployed by pushing to main branch, we will have up and 
 **SET ALL ENV VARIABLES IN NETLIFY DASHBOARD**
 
 OFCOURSE IT WILL THROW ERRORS WITHOUT MENTIONED THINGS
+
+# You can set env variables also by running a command locally
+
+```
+ntl env:import .env
+```
+
+# And don't forget to go and alter url for your `Slash Command`
+
+because we have new url of site where are function are deployed
+
+`<netlify url>/api/slack`
+
+# Another place to update above mentioned url is in `Interactivity & Shortcuts`
+
+`<netlify url>/api/slack`

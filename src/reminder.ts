@@ -38,9 +38,12 @@ const postNewNotionItemsToSlack: Handler = async function (event) {
 // to make cron job we will export this
 // export const handler = schedule('0 12 * * 1', postNewNotionItemsToSlack);
 // this one is for running every four minutes
-export const handler = schedule('*/4 * * * *', postNewNotionItemsToSlack);
+// export const handler = schedule('*/4 * * * *', postNewNotionItemsToSlack);
 // All * * * * means every minute
-//
+
+// I deployed this one (once a year) at the end because I don't want
+// to go over my cron jobs limit
+export const handler = schedule('0 0 1 1 *', postNewNotionItemsToSlack);
 
 // I have used <https://crontab.guru> to make cron job above
 // more human redably
