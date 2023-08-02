@@ -168,7 +168,7 @@ We are going to use `Read content` `Upate content` `Insert content`, which is al
 
 make sure to save everything in those menus
 
-### Conect notion app to notion workspaace
+### Conect notion app to notion workspace
 
 Go back to your notion page, and you have context menu top right, pick `Manage connection`, You should see your app, or type the name in order to find it and make a connection.
 
