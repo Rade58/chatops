@@ -36,9 +36,17 @@ const postNewNotionItemsToSlack: Handler = async function (event) {
 
 // to make cron job we will export this
 // export const handler = schedule('0 12 * * 1', postNewNotionItemsToSlack);
-export const handler = schedule('* * * * *', postNewNotionItemsToSlack);
+// this one is for running every four minutes
+export const handler = schedule('*/4 * * * *', postNewNotionItemsToSlack);
 // All * * * * means every minute
 //
 
 // I have used <https://crontab.guru> to make cron job above
 // more human redably
+
+// we can test this function in development only by
+// going to <tunnel url>/api/reminder
+
+// but to actually test in production (to see if job is going to
+// be runned actually in intervals we setted, we need to deploy our
+// netlify fuctions)
