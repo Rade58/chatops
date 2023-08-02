@@ -1,9 +1,9 @@
-export async function notionApi(endpoint: string, body: string) {
+export async function notionApi(endpoint: string, body: {}) {
   const res = await fetch(`https://api.notion.com/v1${endpoint}`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
-      Authorization: `Bearer ${process.env.NOTION_SECRET}`,
+      Authorization: `Bearer ${process.env.NOTION_APP_SECRET}`,
       'Notion-Version': '2022-06-28',
       'Content-Type': 'application/json',
     },
@@ -19,4 +19,31 @@ export async function notionApi(endpoint: string, body: string) {
   const data = await res?.json();
 
   return data;
+}
+
+// getting a new items from datbase (items marrkd as to-do or 'Not Started')
+
+export async function getNewItems(): Promise<NewItem[]> {
+  const notionData = await notionApi(
+    `/datbases/${process.env.NOTION_DATABASE_ID}/query`,
+    {
+      filter: {
+        property: 'Status',
+        status: {
+          equals: 'new',
+        },
+        page_size: 100,
+      },
+    }
+  );
+
+  const openItems = notionData.results.map((item: NotionItem) => {
+    return {
+      opinion: item.properties.opinion.title[0].text.content,
+      spiceLevel: item.properties.spiceLevel.select.name,
+      status: item.properties.Status.status.name,
+    };
+  });
+
+  return openItems;
 }
