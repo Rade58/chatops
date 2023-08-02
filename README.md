@@ -114,7 +114,21 @@ And in our api endpoint (`src/slack.ts`): We built function called `handleIntera
 
 ### We can also create shortcuts
 
+We go to the menu I mentioned `Interactivity & Shortcuts`
 
+Then we create shortcut
+
+Shortcut can be displayed globally (lighting bolt) or on message
+
+We need `on message`
+
+Fill the form with other info and Assign some unique `callback_id`
+
+You now create a shortcut
+
+After creating make sure that you `save changes`
+
+Go into slack channell **reload page** and you have context menu on the right of posted messages, shortcut shoulld be there
 
 ## Slack Block Kit Builder
 
