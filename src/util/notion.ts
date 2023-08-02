@@ -25,17 +25,19 @@ export async function notionApi(endpoint: string, body: {}) {
 
 export async function getNewItems(): Promise<NewItem[]> {
   const notionData = await notionApi(
-    `/datbases/${process.env.NOTION_DATABASE_ID}/query`,
+    `/databases/${process.env.NOTION_DATABASE_ID}/query`,
     {
       filter: {
         property: 'Status',
         status: {
-          equals: 'new',
+          equals: 'Not Started',
         },
-        page_size: 100,
       },
+      page_size: 100,
     }
   );
+
+  console.log({ notionData });
 
   const openItems = notionData.results.map((item: NotionItem) => {
     return {

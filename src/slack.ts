@@ -109,14 +109,14 @@ async function handleInteractivity(payload: SlackModalPayload) {
 
       await slackApi('chat.postMessage', {
         // we want to use general channell
-        // so find the id of your general channell
+        // so find the id of your #general channell
         // by clicking on name chanell in top left corner when you
         // open the channall in your slack workspace
 
         // this means every time someone uses our slash
         // command, outut will be posted only to that channell
 
-        channel: 'C05KLGUB20J',
+        channel: process.env.SLACK_GENERAL_CHANNEL_ID,
         // a way to reference user (I gues this is mrkdown (markdown flavour of slak))
         // you can write this kinds of tags: <@>
         text: `Oh dang y'all :eyes: <@${payload.user.id}> just started a food fight with a ${fields.spiceLevel} take:\n\n*${fields.opinion}*\n\n...discuss.`,
