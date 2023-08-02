@@ -1,6 +1,7 @@
 import { type Handler } from '@netlify/functions';
 import { parse } from 'querystring';
 import { slackApi, verifySlackRequest, blocks, modal } from './util/slack';
+import { saveItem } from './util/notion';
 
 // made up this name (not some thing setted in slack api dashboard)
 const MODAL_ID = 'foodfight_modal';
@@ -100,6 +101,11 @@ async function handleInteractivity(payload: SlackModalPayload) {
         spiceLevel: data.spice_level_block.spice_level.selected_option.value,
         submitter: payload.user.name,
       };
+
+      // saving new item to slack
+
+      await saveItem(fields);
+      //
 
       await slackApi('chat.postMessage', {
         // we want to use general channell
